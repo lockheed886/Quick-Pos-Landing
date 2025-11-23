@@ -54,14 +54,17 @@
         <h1>Hero Section Coming Soon</h1>
     </section>
 
-    <script>
-        // Simple JavaScript for Mobile Menu
-        const menuToggle = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.nav-list');
+   <script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
 
-        menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-    </script>
+    menuToggle.addEventListener('click', () => {
+        // 1. Toggle the Slide-down menu
+        navList.classList.toggle('active');
+        
+        // 2. Toggle the "X" animation on the hamburger icon
+        menuToggle.classList.toggle('is-active');
+    });
+</script>
 </body>
 </html>
