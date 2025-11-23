@@ -101,6 +101,44 @@
         </div>
     </section>
     <!-- [SCRUM-33] Features Layout End -->
+     <!-- [SCRUM-34] Feature Content Start -->
+    <?php
+    // PHP Data Structure for Feature Content
+    // This makes it easy to change text without touching HTML
+    $featuresContent = [
+        [
+            "title" => "Smart Inventory",
+            "desc"  => "Never run out of stock. Our system tracks every item in real-time and sends automated alerts when supplies run low.",
+            // SVG Icon: Box/Cube
+            "icon"  => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>'
+        ],
+        [
+            "title" => "Sales Analytics",
+            "desc"  => "Visualize your success. Access detailed profit margin reports, staff performance metrics, and revenue trends instantly.",
+            // SVG Icon: Bar Chart
+            "icon"  => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>'
+        ],
+        [
+            "title" => "Seamless Integration",
+            "desc"  => "Connects perfectly with the tools you already use, including QuickBooks, Stripe, and popular delivery apps.",
+            // SVG Icon: Link
+            "icon"  => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>'
+        ]
+    ];
+    ?>
+
+    <div class="features-grid">
+        <?php foreach ($featuresContent as $feature): ?>
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <?php echo $feature['icon']; ?>
+                </div>
+                <h3><?php echo $feature['title']; ?></h3>
+                <p><?php echo $feature['desc']; ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <!-- [SCRUM-34] Feature Content End -->
    <script>
     const menuToggle = document.getElementById('mobile-menu');
     const navList = document.querySelector('.nav-list');

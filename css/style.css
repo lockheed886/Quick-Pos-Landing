@@ -167,6 +167,33 @@ ul {
     color: #888;
     line-height: 1.6;
 }
+/* --- [SCRUM-34] CONTENT TYPOGRAPHY --- */
+.feature-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.feature-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #888888; /* Luxurious Grey */
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.icon-wrapper svg {
+    stroke: #ffffff; /* Ensure icons are white */
+    transition: stroke 0.3s ease;
+}
+
+.feature-card:hover .icon-wrapper svg {
+    stroke: #cccccc; /* Slight dim on hover for effect */
+}
 
 
 /* --- RESPONSIVENESS --- */
