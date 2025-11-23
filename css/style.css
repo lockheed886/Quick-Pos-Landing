@@ -194,6 +194,44 @@ ul {
 .feature-card:hover .icon-wrapper svg {
     stroke: #cccccc; /* Slight dim on hover for effect */
 }
+/* --- [SCRUM-39] FOOTER STYLING --- */
+.site-footer {
+    background-color: #050505;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle luxurious border */
+    margin-top: auto; /* Pushes footer to bottom if page is short */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left p {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.social-list {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    color: #888;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    color: #ffffff; /* White on hover */
+    transform: translateY(-2px);
+}
+
 
 
 /* --- RESPONSIVENESS --- */
@@ -314,5 +352,13 @@ ul {
     
     .feature-card {
         padding: 30px;
+    }
+}
+/* Responsive Footer (Stack on mobile) */
+@media screen and (max-width: 600px) {
+    .footer-container {
+        flex-direction: column-reverse; /* Put socials on top of copyright */
+        gap: 20px;
+        text-align: center;
     }
 }

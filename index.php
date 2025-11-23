@@ -139,6 +139,41 @@
         <?php endforeach; ?>
     </div>
     <!-- [SCRUM-34] Feature Content End -->
+     <!-- [SCRUM-39] Footer Start -->
+    <?php
+    // PHP Logic: Get current year automatically
+    $currentYear = date("Y");
+
+    // PHP Logic: Social Media Links Array
+    $socialLinks = [
+        "Twitter"  => ["url" => "#", "icon" => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-12.7 12.5S.2 5.3 7.8 4.5c2.1-.2 3.2-.4 3.2-.4l-.9 5.6 3-2.5 5 4.5.3-7.7z"></path></svg>'],
+        "LinkedIn" => ["url" => "#", "icon" => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>'],
+        "Facebook" => ["url" => "#", "icon" => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>']
+    ];
+    ?>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <!-- Left Side: Copyright -->
+            <div class="footer-left">
+                <p>&copy; <?php echo $currentYear; ?> QuickPOS. All rights reserved.</p>
+            </div>
+
+            <!-- Right Side: Social Icons -->
+            <div class="footer-right">
+                <ul class="social-list">
+                    <?php foreach ($socialLinks as $platform => $data): ?>
+                        <li>
+                            <a href="<?php echo $data['url']; ?>" class="social-link" aria-label="<?php echo $platform; ?>">
+                                <?php echo $data['icon']; ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- [SCRUM-39] Footer End -->
    <script>
     const menuToggle = document.getElementById('mobile-menu');
     const navList = document.querySelector('.nav-list');
