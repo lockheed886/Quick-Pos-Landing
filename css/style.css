@@ -1,0 +1,140 @@
+/* --- RESET & BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #050505; /* Deep Black */
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- NAVIGATION BAR --- */
+.navbar {
+    background: rgba(5, 5, 5, 0.85); /* Semi-transparent black */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle luxury border */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- LOGO --- */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #fff;
+}
+
+.logo span {
+    color: #888; /* Subtle contrast for 'POS' */
+    font-weight: 300;
+}
+
+/* --- NAV LINKS --- */
+.nav-list {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    color: #aaaaaa; /* Muted white */
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff; /* Bright white on hover */
+}
+
+/* --- SIGN UP BUTTON (CTA) --- */
+.btn-signup {
+    padding: 10px 24px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 4px; /* Slight rounding, keeps it sharp/modern */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-signup:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px); /* Subtle lift */
+}
+
+/* --- MOBILE MENU (HAMBURGER) --- */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* --- RESPONSIVENESS --- */
+@media screen and (max-width: 768px) {
+    .nav-list {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #050505;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        display: none; /* Hidden by default */
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .btn-signup {
+        display: none; /* Hide CTA on mobile or move inside list if preferred */
+    }
+}
