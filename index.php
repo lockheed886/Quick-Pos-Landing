@@ -49,10 +49,55 @@
     </nav>
     <!-- END NAVIGATION -->
 
-    <!-- Placeholder for Hero Section -->
-    <section style="height: 100vh; background: #050505; color: white; display:flex; align-items:center; justify-content:center;">
-        <h1>Hero Section Coming Soon</h1>
+    <!-- [SCRUM-31] Hero Section Start -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-container">
+            
+            <!-- Left Side: Text Content -->
+            <div class="hero-text">
+                <h1 class="hero-headline">
+                    The Last POS System <br>
+                    <span class="highlight">You’ll Ever Need.</span>
+                </h1>
+                <p class="hero-subhead">
+                    Manage sales, inventory, and employees with the luxurious speed your business deserves. Setup takes seconds.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">Get Started for Free</a>
+                    <a href="#features" class="btn-secondary">View Features</a>
+                </div>
+            </div>
+
+            <!-- Right Side: Visual/Image -->
+            <!-- Using a CSS 'Glass' Card to represent the Software UI -->
+            <div class="hero-visual">
+                <div class="pos-mockup">
+                    <div class="mockup-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="mockup-sidebar"></div>
+                        <div class="mockup-content">
+                            <div class="skeleton-line full"></div>
+                            <div class="skeleton-line half"></div>
+                            <div class="skeleton-grid">
+                                <div class="box"></div>
+                                <div class="box"></div>
+                                <div class="box"></div>
+                                <div class="box"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ambient Glow Effect behind image -->
+                <div class="glow-effect"></div>
+            </div>
+
+        </div>
     </section>
+    <!-- [SCRUM-31] Hero Section End -->
     
     <!-- [SCRUM-33] Features Layout Start -->
     <section id="features" class="features-section">
