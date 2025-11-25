@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - QuickPOS</title>
+    <title>Message Sent - QuickPOS</title>
+    <!-- Link to Main CSS to keep fonts consistent -->
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* Minimalist Black & White Theme */
+        /* [SCRUM-38] Success Page Specific Styles */
         body {
-            background-color: #050505;
+            margin: 0;
+            padding: 0;
+            background-color: #050505; /* Deep Black */
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             height: 100vh;
@@ -17,25 +22,97 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin: 0;
         }
-        h1 { font-size: 3rem; margin-bottom: 20px; }
-        p { color: #888; margin-bottom: 40px; font-size: 1.2rem; }
-        .btn {
-            padding: 15px 30px;
-            background: #fff;
-            color: #000;
+
+        .success-container {
+            max-width: 500px;
+            padding: 40px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Animated Checkmark */
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px auto;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .check-svg {
+            width: 40px;
+            height: 40px;
+            stroke: #fff;
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawCheck 1s ease forwards 0.5s;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        p {
+            color: #888;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* Return Button */
+        .btn-return {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: #ffffff;
+            color: #000000;
             text-decoration: none;
             font-weight: 600;
             border-radius: 4px;
-            transition: background 0.3s;
+            transition: transform 0.2s, background-color 0.2s;
         }
-        .btn:hover { background: #ccc; }
+
+        .btn-return:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
     </style>
 </head>
 <body>
-    <h1>Message Received.</h1>
-    <p>Thank you for contacting QuickPOS. We will be in touch shortly.</p>
-    <a href="index.php" class="btn">Return to Home</a>
+
+    <div class="success-container">
+        <!-- Success Icon -->
+        <div class="icon-circle">
+            <svg class="check-svg" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+
+        <!-- Text Content -->
+        <h1>Message Received.</h1>
+        <p>Thank you for contacting QuickPOS. Our team will review your request and get back to you shortly.</p>
+
+        <!-- CTA -->
+        <a href="index.php" class="btn-return">Return to Home</a>
+    </div>
+
 </body>
 </html>
