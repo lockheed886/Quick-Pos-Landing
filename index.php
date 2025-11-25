@@ -184,6 +184,75 @@
         <?php endforeach; ?>
     </div>
     <!-- [SCRUM-34] Feature Content End -->
+     <!-- [SCRUM-35] Pricing Section Start -->
+    <?php
+    // PHP Logic: Define Pricing Plans
+    $pricingPlans = [
+        [
+            "name" => "Basic",
+            "price" => "$0",
+            "period" => "/mo",
+            "desc" => "Perfect for small pop-up shops.",
+            "features" => ["Single User", "100 Products", "Basic Analytics"],
+            "highlight" => false
+        ],
+        [
+            "name" => "Pro",
+            "price" => "$49",
+            "period" => "/mo",
+            "desc" => "For growing businesses.",
+            "features" => ["5 Staff Accounts", "Unlimited Products", "Advanced Analytics", "Inventory Alerts"],
+            "highlight" => true // This signals the 'Featured' style
+        ],
+        [
+            "name" => "Enterprise",
+            "price" => "Custom",
+            "period" => "",
+            "desc" => "For large scale retail chains.",
+            "features" => ["Unlimited Users", "API Access", "Dedicated Support", "Custom Integrations"],
+            "highlight" => false
+        ]
+    ];
+    ?>
+
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple Pricing</h2>
+                <p>Transparent costs. No hidden fees.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <?php foreach ($pricingPlans as $plan): ?>
+                    <!-- Add 'featured' class if it's the Pro plan -->
+                    <div class="pricing-card <?php echo $plan['highlight'] ? 'featured' : ''; ?>">
+                        
+                        <div class="card-header">
+                            <h3><?php echo $plan['name']; ?></h3>
+                            <div class="price-box">
+                                <span class="price"><?php echo $plan['price']; ?></span>
+                                <span class="period"><?php echo $plan['period']; ?></span>
+                            </div>
+                            <p class="plan-desc"><?php echo $plan['desc']; ?></p>
+                        </div>
+
+                        <ul class="feature-list">
+                            <?php foreach ($plan['features'] as $feature): ?>
+                                <li>
+                                    <!-- Checkmark Icon -->
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <?php echo $feature; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+
+                        <a href="#contact" class="btn-pricing">Choose <?php echo $plan['name']; ?></a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <!-- [SCRUM-35] Pricing Section End -->
      <!-- [SCRUM-39] Footer Start -->
     <?php
     // PHP Logic: Get current year automatically
