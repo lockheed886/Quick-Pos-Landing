@@ -253,6 +253,47 @@
         </div>
     </section>
     <!-- [SCRUM-35] Pricing Section End -->
+     <!-- [SCRUM-10] Contact Section Start -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-container">
+            
+            <div class="contact-text">
+                <h2>Get in Touch</h2>
+                <p>Ready to upgrade your business? Send us a message.</p>
+                
+                <!-- PHP Error Message Display -->
+                <?php if (isset($_GET['error'])): ?>
+                    <div style="color: #ff5f56; margin-bottom: 20px; border: 1px solid #ff5f56; padding: 10px;">
+                        <?php 
+                            if($_GET['error'] == "empty_fields") echo "Please fill in all fields.";
+                            if($_GET['error'] == "invalid_email") echo "Please enter a valid email.";
+                        ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <form action="process-contact.php" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@company.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your needs..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+
+        </div>
+    </section>
+    <!-- [SCRUM-10] Contact Section End -->
      <!-- [SCRUM-39] Footer Start -->
     <?php
     // PHP Logic: Get current year automatically
