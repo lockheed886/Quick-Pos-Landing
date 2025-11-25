@@ -509,6 +509,89 @@ ul {
     background: #333;
 }
 
+/* --- [SCRUM-10] CONTACT FORM STYLING --- */
+.contact-section {
+    padding: 100px 0;
+    background-color: #050505;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.contact-text {
+    flex: 1;
+    max-width: 400px;
+}
+
+.contact-text h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.contact-text p {
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Form Styles */
+.contact-form {
+    flex: 1;
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    padding: 15px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #fff; /* White border on focus */
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #ddd;
+}
+
 
 
 
@@ -674,5 +757,12 @@ ul {
     
     .pricing-card.featured {
         transform: scale(1); /* Reset scale on mobile */
+    }
+}
+/* Mobile Stack */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
     }
 }
