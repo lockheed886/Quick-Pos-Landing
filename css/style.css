@@ -385,6 +385,130 @@ ul {
     pointer-events: none;
 }
 
+/* --- [SCRUM-35] PRICING SECTION --- */
+.pricing-section {
+    padding: 100px 0;
+    background-color: #050505;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: center; /* Vertically align cards */
+}
+
+/* --- CARD STYLES --- */
+.pricing-card {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    padding: 40px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.price-box {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.period {
+    color: #666;
+    font-size: 1rem;
+}
+
+.plan-desc {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    min-height: 40px; /* Aligns buttons evenly */
+}
+
+/* --- FEATURE LIST --- */
+.feature-list {
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.check-icon {
+    stroke: #fff;
+    width: 16px;
+    height: 16px;
+}
+
+/* --- BUTTONS --- */
+.btn-pricing {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.btn-pricing:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* --- FEATURED (PRO) CARD STYLES --- */
+.pricing-card.featured {
+    background: #ffffff; /* Invert colors */
+    border-color: #ffffff;
+    transform: scale(1.05); /* Make it slightly bigger */
+    z-index: 2;
+    box-shadow: 0 0 30px rgba(255,255,255,0.05);
+}
+
+.pricing-card.featured h3, 
+.pricing-card.featured .period,
+.pricing-card.featured .plan-desc,
+.pricing-card.featured .feature-list li {
+    color: #555;
+}
+
+.pricing-card.featured .price {
+    color: #000;
+}
+
+.pricing-card.featured .check-icon {
+    stroke: #000;
+}
+
+.pricing-card.featured .btn-pricing {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.pricing-card.featured .btn-pricing:hover {
+    background: #333;
+}
+
 
 
 
@@ -539,5 +663,16 @@ ul {
     
     .hero-headline {
         font-size: 2.5rem;
+    }
+}
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: 1fr; /* Stack on mobile */
+        gap: 50px;
+    }
+    
+    .pricing-card.featured {
+        transform: scale(1); /* Reset scale on mobile */
     }
 }
